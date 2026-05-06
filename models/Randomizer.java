@@ -9,7 +9,7 @@ public class Randomizer {
         System.out.println("Instance created!");
     }
 
-    public static Randomizer getInstance() {
+    public static Randomizer getInstance() { 
         if (random == null) {
 
             synchronized (Randomizer.class) {
