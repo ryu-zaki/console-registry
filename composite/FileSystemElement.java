@@ -18,7 +18,7 @@ public abstract class FileSystemElement {
 
     public abstract void display(String prepend);
 
-    public void add(File newFile) throws Exception {
+    public void add(FileSystemElement newElement) throws Exception {
         throw new Error("CANNOT ADD TO THIS ELEMENT.");
     }
 

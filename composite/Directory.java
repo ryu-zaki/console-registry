@@ -6,21 +6,24 @@ import java.util.stream.Collectors;
 
 public class Directory extends FileSystemElement {
 
-    private List<File> children = new ArrayList<>();
+    private List<FileSystemElement> children;
 
     public Directory(String name) {
         super(name);
+        children = new ArrayList<>();
     }
 
     @Override
     public void display(String prepend) {
-
         System.out.println(prepend + "*--" + getName());
 
+        for (FileSystemElement e: children) {
+             e.display("  " + prepend);
+        }
     }
     @Override
-    public void add(File newFile) {
-        children.add(newFile);
+    public void add(FileSystemElement newElement) {
+        children.add(newElement);
     }
 
     @Override
